@@ -71,7 +71,9 @@ const mongoClient = mongodb.MongoClient;
 // ************************************************
 let dbName = "sophies_db";
 // connection string
-const uri = "mongodb+srv://new-user-26:password1234@cluster0.tj1ms.mongodb.net/sophies_db?retryWrites=true&w=majority";
+// const uri = "mongodb+srv://new-user-26:password1234@cluster0.tj1ms.mongodb.net/sophies_db?retryWrites=true&w=majority";
+var dev_db_url = "mongodb+srv://new-user-26:password1234@cluster0.tj1ms.mongodb.net/sophies_db?retryWrites=true&w=majority";
+var mongoDB = process.env.MONGODB_URI || dev_db_url;
 export const getCollectionDocuments = async (collectionName) => {
     // Connect to our database / open our connection
     const mongo = await mongoClient.connect(uri, { useUnifiedTopology: true })
